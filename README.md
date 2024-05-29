@@ -55,6 +55,9 @@ Python and Excel.
 * [Get in Touch and/or Give a Star](#get-in-touch-andor-give-a-star)
 * [License](#license)
 
+## Notice of Intention to Make all Repos Private on 16-Jun-2024
+Due to a professional conflict
+
 ## Overview
 A collection of models for the valuation and optimisation of commodity storage, either virtual or physical. The models can be used for any commodity, although are most suitable for natural gas storage valuation and optimisation.
 
