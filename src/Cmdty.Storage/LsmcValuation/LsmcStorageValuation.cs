@@ -117,7 +117,6 @@ namespace Cmdty.Storage
             ReadOnlySpan<double> endPeriodSimSpotPrices = regressionSpotSims.SpotPricesForPeriod(lsmcParams.Storage.EndPeriod).Span;
 
             int numSims = regressionSpotSims.NumSims;
-            double numSimsSqrt = Math.Sqrt(numSims);
 
             for (int i = 0; i < endInventorySpaceGrid.Length; i++)
             {

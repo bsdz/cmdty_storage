@@ -192,13 +192,13 @@ namespace Cmdty.Storage
 
             public Builder SimulateWithMultiFactorModelAndMersenneTwister(
                                         MultiFactorParameters<T> modelParameters, int numSims, int? simSeed = null, 
-                                        int? valuationSimSeed = null)
+                                        int? valuationSimSeed = null, bool antithetic = true)
             {
                 MersenneTwisterGenerator regressionSimNormalGenerator = simSeed == null ? new MersenneTwisterGenerator(true) :
                             new MersenneTwisterGenerator(simSeed.Value, true);
                 // If valuationSimSeed is null then use the same random number generator as regression, which will continue the sequence
                 MersenneTwisterGenerator valuationSimNormalGenerator = valuationSimSeed == null ? regressionSimNormalGenerator : 
-                    new MersenneTwisterGenerator(valuationSimSeed.Value, true);
+                    new MersenneTwisterGenerator(valuationSimSeed.Value, antithetic);
 
                 return SimulateWithMultiFactorModel(regressionSimNormalGenerator, valuationSimNormalGenerator, modelParameters, numSims);
             }
