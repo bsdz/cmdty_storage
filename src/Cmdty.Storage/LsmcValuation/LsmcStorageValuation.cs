@@ -512,7 +512,7 @@ namespace Cmdty.Storage
                 double expectedInventory = Average(thisPeriodInventories);
                 storageProfiles[periodIndex] = new StorageProfile(expectedInventory, sumOverSimsInjectWithdrawVolumes/numSims,
                     sumOverSimsCmdtyConsumed/numSims, sumOverSimsInventoryLoss/numSims, sumOverSimsPv/numSims);
-                // Pathwise differentiation calculation makes assumption that simulated spot price is calculated as forward prices times some stochastic term.
+                // Pathwise differentiation calculation makes assumption of a stochastic process where dF(t)/dF(0) = F(t)/F(0)
                 // This is fine for the multi-factor model in Cmdty.Core, but will not be the case for all models.
                 // TODO figure out best way to handle this, and/or document, or just abandon pathwise differentiation as delta calculation method
                 deltas[periodIndex] = spotPriceTimesVolumeByPath.Average() / forwardPrice * discountForDeltas;
