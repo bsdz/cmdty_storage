@@ -290,6 +290,11 @@ class TestMultiFactorValue(unittest.TestCase):
         val_results.intrinsic_profile.to_csv(path.join(root_path, 'intrinsic_profile.csv'))
         val_results.trigger_prices.to_csv(path.join(root_path, 'trigger_prices.csv'))
 
+    # TODO update regression tests to include delta standard error
+    @staticmethod
+    def _save_val_results_delta_stan_error_csv(val_results, root_path):
+        val_results.deltas_standard_errors.to_csv(path.join(root_path, 'deltas_standard_errors.csv'), header=False)
+
     def _load_valuation_results_csvs(self, reg_test_folder: str):
         root_path = path.join(self._reg_test_directory, reg_test_folder)
         deltas = pd.read_csv(path.join(root_path, 'deltas.csv'), header=None, index_col=0, parse_dates=True).iloc[:,0]
