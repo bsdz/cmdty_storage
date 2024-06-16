@@ -27,7 +27,7 @@ data is returned.
 * Update pythonnet dependency to <3.1.0. This allows reference to the latest version (3.0.3) which is compatible with Python up to version 3.12.
 * Add standard error to results.
 
-### 1.6.0 (Not yet released)
+### 1.6.0
 * Fix bug [#52](https://github.com/cmdty/storage/issues/52) in standard error calculation.
 * Add standard error for delta.
 
